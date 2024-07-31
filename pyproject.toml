@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "sql-database"
+version = "0.1.0"
+description = ""
+authors = ["Chad Upjohn <chad.upjohn@pinnsg.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+langchain = "^0.2.11"
+langsmith = "^0.1.94"
+beautifulsoup4 = "^4.12.3"
+langchain-community = "^0.2.10"
+
+[tool.poetry.group.dev.dependencies]
+black = "24.4.2"
+isort = "5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
