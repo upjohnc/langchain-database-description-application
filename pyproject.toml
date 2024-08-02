@@ -11,6 +11,7 @@ langchain = "^0.2.11"
 langsmith = "^0.1.94"
 beautifulsoup4 = "^4.12.3"
 langchain-community = "^0.2.10"
+click = "^8.1.7"
 
 [tool.poetry.group.dev.dependencies]
 black = "24.4.2"
