@@ -1,3 +1,4 @@
+from pathlib import Path
 from pprint import pprint
 
 import click
@@ -7,6 +8,8 @@ from langchain_core.output_parsers.json import JsonOutputParser
 from langchain_core.output_parsers.string import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from pydantic import BaseModel
+
+DATAMODEL_DIR = Path("./datamodel")
 
 
 def get_llm():
@@ -66,9 +69,14 @@ def get_prompt_json():
     return prompt
 
 
-def run_text_response(llm, table_info):
+def run_text_response(llm, table_info, table_name):
     text_chain = get_chain_str(llm)
     text_response = text_chain.invoke({"table_info": table_info})
+
+    DATAMODEL_DIR.mkdir(parents=True, exist_ok=True)
+    model_file = DATAMODEL_DIR / f"{table_name.lower()}.txt"
+    model_file.write_text(text_response)
+
     return text_response
 
 
@@ -113,7 +121,7 @@ def main(response_type, table_name):
     if response_type == "json":
         response = run_json_response(llm, table_info)
     else:
-        response = run_text_response(llm, table_info)
+        response = run_text_response(llm, table_info, table_name)
     pprint(response)
 
 

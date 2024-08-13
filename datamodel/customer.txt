@@ -1,0 +1,21 @@
+**Table Name:** Customer
+
+**Column List:**
+
+• **CustomerId**: Unique identifier for each customer, represented as an integer.
+• **FirstName**: The first name of the customer, represented as a string with a maximum length of 40 characters.
+• **LastName**: The last name of the customer, represented as a string with a maximum length of 20 characters.
+• **Company**: The company associated with the customer, represented as a string with a maximum length of 80 characters.
+• **Address**: The address of the customer, represented as a string with a maximum length of 70 characters.
+• **City**: The city where the customer is located, represented as a string with a maximum length of 40 characters.
+• **State**: The state or province where the customer is located, represented as a string with a maximum length of 40 characters.
+• **Country**: The country where the customer is located, represented as a string with a maximum length of 40 characters.
+• **PostalCode**: The postal code for the customer's location, represented as a string with a maximum length of 10 characters.
+• **Phone**: The phone number for the customer, represented as a string with a maximum length of 24 characters.
+• **Fax**: The fax number for the customer, represented as a string with a maximum length of 24 characters.
+• **Email**: The email address for the customer, represented as a string with a maximum length of 60 characters. This column is not nullable.
+• **SupportRepId**: The identifier of the support representative responsible for this customer, represented as an integer.
+
+**Additional Information:**
+
+This table represents information about customers, including their contact details and relationship with a support representative (identified by the SupportRepId). The primary key for this table is CustomerId.
